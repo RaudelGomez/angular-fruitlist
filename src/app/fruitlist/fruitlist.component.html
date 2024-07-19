@@ -30,7 +30,11 @@
               }
              }
             }
-            <p>({{ fruit.stars }})</p>
+            @if (fruit.stars >=4) {
+              <p [ngStyle]="{color: greenColor, 'background-color': 'white'}">({{ fruit.stars }})</p>
+            } @else {
+              <p [ngStyle]="{color: redColor, backgroundColor: 'black'}">({{ fruit.stars }})</p>
+            }
           </div>
         </div>
         <div><b>Art:</b><br />{{ fruit.genus }}</div>
